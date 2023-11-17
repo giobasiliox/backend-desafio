@@ -33,4 +33,21 @@ export class ClothesList{
     removeClothing(id){
         this.clothes = this.clothes.filter((clothing) => clothing.id !== id);
     }
+
+    getRoupaPorTipo(tipo){
+        return this.clothes.filter((clothing) => clothing.tipo == tipo);
+    }
+
+    getRoupaPelaCor(cor){
+        return this.clothes.filter((clothing) => clothing.cor == cor);
+    }
+
+    getRoupaPorTamanho(tamanho){
+        return this.clothes.filter((clothing) => clothing.tamanho == tamanho);
+    }
+
+    getRoupaPeloTamanhoTipo(tamanho, tipo){
+        let listDeRoupasDoTipoEscolhido = this.getRoupaPorTipo(tipo);
+        return listDeRoupasDoTipoEscolhido.filter((clothing) => clothing.tamanho == tamanho);
+    }
 }
